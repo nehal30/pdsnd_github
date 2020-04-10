@@ -1,13 +1,16 @@
 Import time
 import pandas as pd
 import numpy as np
-import datetime as dt
 # load data file into a dataframe
+"""
+read csv file for each city the grouping those csv
+files for the 3 cities to form adictionary
+"""
 city_data = pd.read_csv (r’/c/Users/computec/Desktop/project2/chicago.csv, /c/Users/computec/Desktop/project2/Washington.csv, /c/Users/computec/Desktop/project2/new_york_city.csv ')
-     another solution                    
+     another solution
 chicago =  pd.read_csv (r’/c/Users/computec/Desktop/project2/chicago.csv)
-new york city = pd.read_csv (r’/c/Users/computec/Desktop/project2/new_york_city.csv) 
- washington =  pd.read_csv (r’/c/Users/computec/Desktop/project2/ washington.csv) 
+new york city = pd.read_csv (r’/c/Users/computec/Desktop/project2/new_york_city.csv)
+ washington =  pd.read_csv (r’/c/Users/computec/Desktop/project2/ washington.csv)
 
 
 #  create the dictionary city_data to group the imported cities .csv
@@ -73,12 +76,12 @@ def get_filters():
         month = months.index(month) + 1
     #  Created new dataframe for month by filtering the month
         df = df[df['month'] == month]
-# the most common day of  week 
+# the most common day of  week
 #  filter by day of week if applicable
     if day != 'all':
   """Created new dataframe for day””’
         df = df[df['day_of_week'] == day.title()]
-    return df 
+    return df
 
 	    """Displaying the statistics for the Most frequent time to travel"""
 	def time_stats(df):
@@ -101,7 +104,7 @@ def get_filters():
     # Most common hour
     df['hour'] = df['Start Time'].dt.hour
   common_hour = df['hour'].mode()[0]
-    print('Most popular hour: ', common_hour)   
+    print('Most popular hour: ', common_hour)
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 #2 Popular stations and trip
@@ -149,7 +152,7 @@ Average travel time
 	    mean_time = df['Trip Duration'].mean()
 	    print("The average time of a trip is: " + str(mean_time))
 	    print("\nThis took %s seconds." % (time.time() - start_time))
-                 print('-'*40)	
+                 print('-'*40)
 another solution
 # display total travel time
     total_travel = df['Trip Duration'].sum()
@@ -159,7 +162,7 @@ another solution
     print("mean travel time: ", mean_travel)
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-	
+
     	    # User data Function
 	def user_stats(df):
  """Displays statistics on bikeshare users."""
@@ -210,9 +213,3 @@ return. df
 	            break
 	if __name__ == "__main__":
 	    main()
-
-
-
-
-
-
