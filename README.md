@@ -19,6 +19,8 @@
  2. cloning the forked repository into my local directory as i called it project3 and turned it into repository .
  3. turning into the coloned repository through {cd  pdsnd_github}.
  4. adding the project2 files into the local repository through using copy "cp" and paste beside the README file .
+ 5. up dating README .MD file using atom code editor and save them in documentation branch .
+ 6. turning into master branch then into git GitHub.
 
 
 

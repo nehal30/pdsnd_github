@@ -1,6 +1,7 @@
 import time
 import pandas as pd
 import numpy as np
+import datetime as dt
 #  create the dictionary city_data to group the imported cities .csv
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
@@ -24,7 +25,7 @@ def get_filters():
     months = ['January','Feburary','March','April','May','June','All']
     days_of_week = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday','All']
 
-    
+
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
 """ selecting the city that we want to analyze from the cities list that have been filtered"""
     while True:
@@ -51,7 +52,7 @@ def get_filters():
             print('\n {}.'.format(day.title()))
             break
 
- 
+
 #    Loading data for analysis based on city, month, and day filters
 """creating data frame for each city"""
 
@@ -82,12 +83,12 @@ def load_data(city, month, day):
         month = months.index(month) + 1
     #  Created new dataframe for month by filtering the month
         df = df[df['month'] == month]
-# the most common day of  week 
+# the most common day of  week
 #  filter by day of week if applicable
     if day != 'all':
   """Created new dataframe for day””’
         df = df[df['day_of_week'] == day.title()]
-    return df 
+    return df
 
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
@@ -115,7 +116,7 @@ def time_stats(df):
     # Most common hour
     df['hour'] = df['Start Time'].dt.hour
   common_hour = df['hour'].mode()[0]
-    print('Most popular hour: ', common_hour)   
+    print('Most popular hour: ', common_hour)
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -170,7 +171,7 @@ def trip_duration_stats(df):
     print("mean travel time: ", mean_travel)
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-    
+
 	#4 User info (counts of each user type , ,common recent data of birth)
 def user_stats(df):
     """Displays statistics on bikeshare users."""
@@ -181,7 +182,7 @@ def user_stats(df):
     # TO DO: Display counts of user types
     # Count user type
 	    user_type = df['User Type'].value_counts()
-        
+
     # TO DO: Display counts of gender
     # Count gender
 	   gender = df['Gender'].value_counts()
