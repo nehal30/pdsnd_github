@@ -2,6 +2,10 @@ Import time
 import pandas as pd
 import numpy as np
 # load data file into a dataframe
+"""
+read csv file for each city the grouping those csv
+files for the 3 cities to form adictionary
+"""
 city_data = pd.read_csv (r’/c/Users/computec/Desktop/project2/chicago.csv, /c/Users/computec/Desktop/project2/Washington.csv, /c/Users/computec/Desktop/project2/new_york_city.csv ')
      another solution
 chicago =  pd.read_csv (r’/c/Users/computec/Desktop/project2/chicago.csv)
